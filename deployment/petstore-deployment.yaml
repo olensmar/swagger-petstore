@@ -1,20 +1,20 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: petstore-v3
+  name: petstore
 spec:
   replicas: 1
   revisionHistoryLimit: 3
   selector:
     matchLabels:
-      app: petstore-v3
+      app: petstore
   template:
     metadata:
       labels:
-        app: petstore-v3
+        app: petstore
     spec:
       containers:
         - image: docker.io/swaggerapi/petstore3:unstable
-          name: petstore-v3
+          name: petstore
           ports:
             - containerPort: 8080
